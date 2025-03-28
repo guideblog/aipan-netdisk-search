@@ -1,4 +1,7 @@
 node_modules/*
+node_modules
+cache
+cache/*
 # Keep environment variables out of version control
 .env
 .env.production
