@@ -11,6 +11,21 @@ const nextConfig = {
     domains: ['cloudflare-ipfs.com'],
   },
   webpack: (config, { dev, isServer }) => {
+
+if (config.name === 'server') {
+      // 不要缓存服务器端构建
+      config.cache = false;
+    } else {
+      // 对于客户端构建，使用文件系统缓存，但限制大小
+      config.cache = {
+        type: 'filesystem',
+        cacheDirectory: path.resolve(__dirname, '.webpack-cache'), // 自定义缓存目录
+        maxMemoryGenerations: 2, // 限制内存缓存
+      };
+    }
+    
+
+    
     if (!dev) {
       config.optimization = {
         ...config.optimization,
