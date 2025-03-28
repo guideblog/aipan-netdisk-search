@@ -24,7 +24,7 @@ if (config.name === 'server') {
       };
     }
      return config;
-  },
+
 
     
     if (!dev) {
