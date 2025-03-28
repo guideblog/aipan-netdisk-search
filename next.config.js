@@ -23,7 +23,8 @@ if (config.name === 'server') {
         maxMemoryGenerations: 2, // 限制内存缓存
       };
     }
-    
+     return config;
+  },
 
     
     if (!dev) {
